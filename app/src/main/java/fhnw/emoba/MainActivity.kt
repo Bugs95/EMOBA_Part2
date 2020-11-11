@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.ui.platform.setContent
 import fhnw.emoba.modules.module01.helloemoba.HelloEmobaApp
+import fhnw.emoba.modules.module05.flutter.FlutterApp
 import fhnw.emoba.modules.module05.mqtt.MqttApp
 
 
@@ -21,7 +22,8 @@ class MainActivity : AppCompatActivity() {
 
         // ToDo: hier die emoba App eintragen, die gestartet werden soll
         //app = HelloEmobaApp
-        app = MqttApp
+        //app = MqttApp
+        app = FlutterApp
 
         app.initialize(activity = this, savedInstanceState = savedInstanceState)
 

@@ -43,7 +43,8 @@ fun Body(model: FlutterModel){
             }
             Button(onClick  = { MqttModel.publish() },
                 shape    = CircleShape,
-                modifier = Modifier.align(alignment = Alignment.BottomCenter)) {
+                modifier = Modifier.align(alignment = Alignment.CenterHorizontally)
+            ) {
                 Text("Publish ($messagesPublished)")
             }
         }
