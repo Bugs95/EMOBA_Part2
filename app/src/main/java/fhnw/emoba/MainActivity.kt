@@ -5,7 +5,13 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.ui.platform.setContent
 import fhnw.emoba.modules.module01.helloemoba.HelloEmobaApp
 import fhnw.emoba.modules.module05.flutter.FlutterApp
+import fhnw.emoba.modules.module05.mqtt.FlutterApp_Solution
 import fhnw.emoba.modules.module05.mqtt.MqttApp
+import fhnw.emoba.modules.module06.phrasomat.PhrasOMat
+import fhnw.emoba.modules.module06.startrek.StarTrekApp
+import fhnw.emoba.modules.module07.fileio.FileIOApp
+import fhnw.emoba.modules.module07.gps.GpsApp
+import fhnw.emoba.modules.module07.photobooth.PhotoBoothApp
 
 
 /**
@@ -24,6 +30,12 @@ class MainActivity : AppCompatActivity() {
         //app = HelloEmobaApp
         //app = MqttApp
         app = FlutterApp
+        //app = FlutterApp_Solution
+        //app = StarTrekApp
+        //app = PhrasOMat
+        //app = GpsApp
+        //app = PhotoBoothApp
+        //app = FileIOApp
 
         app.initialize(activity = this, savedInstanceState = savedInstanceState)
 

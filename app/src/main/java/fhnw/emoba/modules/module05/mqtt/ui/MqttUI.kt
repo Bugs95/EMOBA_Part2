@@ -42,7 +42,7 @@ private fun Body(model: MqttModel) {
                 )
                 Button(onClick  = { publish() },
                        shape    = CircleShape,
-                       modifier = Modifier.align(Alignment.BottomCenter)) {
+                       modifier = Modifier.align(alignment = Alignment.BottomCenter)) {
                     Text("Publish ($messagesPublished)")
                 }
             }

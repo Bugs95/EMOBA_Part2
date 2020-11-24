@@ -1,4 +1,4 @@
-package fhnw.emoba.modules.module05.flutter.model
+package fhnw.emoba.modules.module05.flutter_solution.model
 
 import android.content.Context
 import android.media.MediaPlayer
@@ -7,13 +7,13 @@ import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import fhnw.emoba.R
-import fhnw.emoba.modules.module05.flutter.data.Flap
-import fhnw.emoba.modules.module05.flutter.data.MqttConnector
+import fhnw.emoba.modules.module05.flutter_solution.data.Flap
+import fhnw.emoba.modules.module05.flutter_solution.data.MqttConnector
 
 object FlutterModel {
-    val title = "FlutterApp";
-    val mqttBroker = "broker.hivemq.com"
-    val mainTopic = "/fhnw/emoba/flutterApp/"
+    const val title      = "FlutterApp"
+    const val mqttBroker = "broker.hivemq.com"
+    const val mainTopic  = "fhnw/emoba/flutterapp/"
 
     val allFlaps = mutableStateListOf<Flap>()
     var strangeMessage by mutableStateOf("")
@@ -21,7 +21,7 @@ object FlutterModel {
 
     lateinit var context: Context
     private val mqttConnector by lazy { MqttConnector(mqttBroker, mainTopic) }
-    private val soundPlayer by lazy {MediaPlayer.create(context, R.raw.whatsapp_web)}
+    private val soundPlayer   by lazy { MediaPlayer.create(context, R.raw.whatsapp_web) }
 
     fun connectAndSubscribe(){
         mqttConnector.connectAndSubscribe(
@@ -36,11 +36,11 @@ object FlutterModel {
             }
         )
     }
-
+    
     fun publish(){
-        val newFlap = Flap(sender = "Geissen Peter", message = "Hallo Heidi ($flapsPublished)");
-        mqttConnector.publish(  newFlap, onPublished = { flapsPublished++})
-        allFlaps.add(newFlap)
+        mqttConnector.publish(Flap(sender      = "Geissen Peter",
+                                   message     = "Hallo Heidi ($flapsPublished)"),
+                                   onPublished = { flapsPublished++})
     }
 
     private fun playSound(){
@@ -48,6 +48,4 @@ object FlutterModel {
             soundPlayer.start()
         }
     }
-
-
 }

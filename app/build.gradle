@@ -76,6 +76,7 @@ dependencies {
 
 
     implementation 'com.hivemq:hivemq-mqtt-client:1.2.1'
+    implementation 'com.google.android.gms:play-services-location:17.1.0'
 }
 
 tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
